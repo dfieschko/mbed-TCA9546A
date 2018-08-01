@@ -19,11 +19,10 @@ class TCA9546A
          * @param i2c_set mbed I2C class
          * @param addr_set I2C address - range 0x70 to 0x77 - 0x70 default
          * @param reset_pin mbed device DigitalOut reset pin - NC default
-         * @note RESET PIN IS AUTOMATICALLY SET TO PIN 22 WHEN NOT ENTERED.
          */
         TCA9546A( I2C * i2c_set,
                   uint8_t addr_set = 0x70,
-                  PinName reset    = p22 ); /
+                  DigitalOut * resetOut = NULL );
                   
         /** Destructor */
         ~TCA9546A();
@@ -48,7 +47,7 @@ class TCA9546A
     private:
         I2C * i2c;
         uint8_t address;
-        DigitalOut reset_pin;
+        DigitalOut * reset_pin;
         int8_t channel;
 };
 
