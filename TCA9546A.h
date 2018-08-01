@@ -3,10 +3,7 @@
 
 #include "mbed.h"
 
-class TCA9546A
-{
-    public:
-        /** List of channels w/ corresponding int ids */
+/** List of channels w/ corresponding int ids */
         enum Channel
         {
             CHAN0 = 0,
@@ -14,7 +11,10 @@ class TCA9546A
             CHAN2 = 2,
             CHAN3 = 3
         };
-        
+
+class TCA9546A
+{
+    public:
         /** Constructor.
          * @param i2c_set mbed I2C class
          * @param addr_set I2C address - range 0x70 to 0x77 - 0x70 default
